@@ -12,6 +12,8 @@ gpgcheck=1
 enabled=1
 EOF
 
+sudo yum install -y mongodb-org
+
 # PHP 7
 wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 rpm -Uvh remi-release-7*.rpm
@@ -28,6 +30,9 @@ yum -y install nginx
 
 # Redis
 yum -y install redis
+
+# Misc.
+yum -y install vim
 
 # Enable Services
 systemctl enable nginx.service
