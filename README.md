@@ -28,7 +28,7 @@ Vagrant.configure(2) do |config|
   config.vm.network :private_network, ip: '192.168.16.16'
   
   config.vm.synced_folder "./config/nginx", "/etc/nginx/conf.d", create: true
-  config.vm.synced_folder "../", "/var/www", owner: 'nginx', group: 'nginx'
+  config.vm.synced_folder ".", "/var/www", owner: 'nginx', group: 'nginx'
 
   config.vm.provision :shell, inline: 'service nginx reload', priviliged: true, run: 'always' 
 end
