@@ -15,3 +15,21 @@ vagrant up --provider virtualbox
 ```bash
 make clean && make
 ```
+
+## Example
+**Vagrantfile:**
+```ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "bash/box"
+
+  config.vm.network :private_network, ip: '192.168.16.16'
+  
+  config.vm.synced_folder "./config/nginx", "/etc/nginx/conf.d", create: true
+  config.vm.synced_folder "../", "/var/www", owner: 'nginx', group: 'nginx'
+
+  config.vm.provision :shell, inline: 'service nginx reload', priviliged: true, run: :always 
+end
+```
