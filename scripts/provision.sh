@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Enable EPEl repo
 yum install -y epel-release
 
