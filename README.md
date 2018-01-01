@@ -5,7 +5,7 @@
 
 A vagrant base image with nginx, mongodb, php7 and redis.
 
-## Usage
+## Usage
 ```bash
 vagrant init bash/box
 vagrant up --provider virtualbox
